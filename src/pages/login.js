@@ -9,7 +9,7 @@ export default function Login(){
         let password = (document.getElementById('password')).value
         setName(name)
         setPassword(password)
-        setResult(Number(name), Number(password))
+        setResult(name, password)
     }
     return <><h1>Login폼</h1>
         <div> 

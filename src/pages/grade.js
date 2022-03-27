@@ -28,7 +28,7 @@ export default function Grade(){
         <label><b>mathscore</b></label>
         <input id="mathscore"/><br/>
         <button onClick={()=>{Grade()}}>확인</button>
-        <div>결과: {name} {korscore} {engscore} {mathscore} </div>
+        <div>결과: 이름: {name} 국어: {korscore} {engscore} {mathscore} </div>
     </div>
     </>)
 } 
