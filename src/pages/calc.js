@@ -25,6 +25,8 @@ export default function Calc(){
                return Number(num1) * Number(num2)
             case '/' : 
                return Number(num1) / Number(num2)
+            case '%' :
+               return Number(num1) % Number(num2)
         }
     }
     return (
@@ -33,7 +35,14 @@ export default function Calc(){
             <label><b>number1</b></label>
             <input id="num1"/><br/>
             <label><b>opcode</b></label>
-            <input id='opcode'/><br/>
+            <select name="" id="opcode">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <br/>
             <label><b>number2</b></label>
             <input id="num2"/><br/>
             <button onClick={()=>{sum()}}>더하기 실행</button>
