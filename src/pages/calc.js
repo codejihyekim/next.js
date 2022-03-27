@@ -18,13 +18,13 @@ export default function Calc(){
     const minal = (num1, opcode, num2) =>{
         switch(opcode){
             case '+' :
-                Number(num1) + Number(num2) 
+               return Number(num1) + Number(num2) 
             case '-' : 
-                Number(num1) - Number(num2)
+               return Number(num1) - Number(num2)
             case '*' : 
-                Number(num1) * Number(num2)
+               return Number(num1) * Number(num2)
             case '/' : 
-                Number(num1) / Number(num2)
+               return Number(num1) / Number(num2)
         }
     }
     return (
