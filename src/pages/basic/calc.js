@@ -13,9 +13,9 @@ export default function Calc(){
         setNum1(num1)
         setNum2(num2)
         setOpcode(opcode)
-        setResult(minal(num1, opcode, num2))
+        setResult(calcResult(num1, opcode, num2))
     }
-    const minal = (num1, opcode, num2) =>{
+    const calcResult = (num1, opcode, num2) =>{
         switch(opcode){
             case '+' :
                return Number(num1) + Number(num2) 
