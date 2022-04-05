@@ -19,7 +19,7 @@ export default function BoardhtmlForm(){
         alert(`등록할 게시글 : ${JSON.stringify(inputs)}`)
         axios.post('http://localhost:5000/api/board/write', inputs)
         .then(res => {
-            alert(res.data)
+            alert(`결과: ${res.data.result}`)
         })
         .catch(err => alert(err))
     }
@@ -71,6 +71,7 @@ export default function BoardhtmlForm(){
             </div>
             </htmlForm>
             </div>
+            <div>결과: <span id="result-span"></span> </div>
         
     </>)
 }

@@ -12,7 +12,6 @@ export default function Calc(){
         setInputs({
             ...inputs, [name]:value
         })
-
     }
     const handleSubmit = e => {
         e.preventDefault()

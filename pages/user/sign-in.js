@@ -1,30 +1,42 @@
+import axios from "axios";
 import React, {useState} from "react"
-
-export default function SignIn(){
-    const [name, setName] = useState("")
-    const [password, setPassword] = useState("")
-    const [result, setResult] = useState("")
-
-    const Login=()=> {
-        let name = (document.getElementById('name')).value
-        let password = (document.getElementById('password')).value
-        setName(name)
-        setPassword(password)
-        setResult(name, password)
+export default function Login(){
+    
+    const [inputs, setInputs] = useState({})
+    
+    const handleChange =(e)=>{
+        e.preventDefault()
+        const {value, name} = e.target;
+        setInputs({
+            ...inputs, [name]:value
+        })
     }
-    return <><h1>Login폼</h1>
-        <div> 
-            <label><b>name</b></label>
-            <input id='name'/><br/>
-            <label><b>password</b></label>
-            <input id='password'/><br/>
-            <button onClick={()=>{Login()}}>확인</button>
-            <div>이름: {name} 비번: {password}</div>
-            <label >
-                <input />remember me
-            </label> 
-            <button>Cancel</button>
-            <span>Forgot <a>password?</a></span>
-        </div>
-        </>
+    const handleClick = (e) =>{
+        e.preventDefault()
+        axios.post('', inputs) 
+        .then(res => {})
+        .catch(err => alert(err))
+    }
+
+   return (<>
+    <form>
+    <h1>Login 폼</h1>
+    <div>
+        <label><b>name</b></label>
+        <input name="name" onChange={handleChange}/><br/>
+        <label><b>userid</b></label>
+        <input name="userid" onChange={handleChange}/><br/>
+        <label><b>password</b></label>
+        <input name="password" onChange={handleChange}/><br/>
+        <button onClick={handleClick}>Login</button>
+    </div>
+    <label >
+        <input />remember me
+    </label> 
+    <div>
+        <button>Cancel</button>
+        <span>Forgot<a>password?</a></span>
+    </div>
+    </form>
+    </>)
 }
