@@ -2,7 +2,7 @@ import axios from "axios"
 import React, {useState} from "react"
 
 export default function SignUp(){
-    
+
     const [inputs, setInputs] = useState({})
     
     const handleChange = e => {
@@ -13,14 +13,11 @@ export default function SignUp(){
         })
     }
 
-    const handleSubmit = e =>{
+    const handleSubmit = e => {
         e.preventDefault()
         axios.post('http://localhost:5000/api/user/sigh-up', inputs)
         .then(res => {
-            const signUP = res.data
-            document.getElementById('result-span').innerHTML=`
-            <h3>${signUP}님 회원가입이 완료되었습니다.</h3>
-            `
+            alert(`결과: ${JSON.stringify(res.data)}`)
         })
         .catch(err => alert(err))
     }

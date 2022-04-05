@@ -17,10 +17,7 @@ export default function Calc(){
         e.preventDefault()
         axios.post('http://localhost:5000/api/basic/calc', inputs)
         .then(res => {
-            const calc = res.data
-            document.getElementById('result-span').innerHTML=`
-            <h3>${calc.num1} ${calc.opcode} ${calc.num2} = ${calc.res}</h3>
-            `
+           alert(`${JSON.stringify(res.data)}`)
         })
         .catch(err => alert)
     }

@@ -71,7 +71,7 @@ export default function BoardhtmlForm(){
             </div>
             </htmlForm>
             </div>
-            <div>결과: <span id="result-span"></span> </div>
+          
         
     </>)
 }
