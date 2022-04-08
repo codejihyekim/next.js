@@ -21,6 +21,7 @@ export default function SignUp(){
         })
         .catch(err => alert(err))
     }
+    
     return (<>
         <h1>회원가입폼</h1>
         <form action="" onSubmit={handleSubmit}>
