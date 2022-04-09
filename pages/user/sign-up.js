@@ -15,6 +15,7 @@ export default function SignUp(){
 
     const handleSubmit = e => {
         e.preventDefault()
+        alert(`등록할 회원정보: ${JSON.stringify(inputs)}`)
         axios.post('http://localhost:5000/api/user/sigh-up', inputs)
         .then(res => {
             alert(`결과: ${JSON.stringify(res.data)}`)
@@ -41,6 +42,5 @@ export default function SignUp(){
                 <button >전 송</button><button>취 소</button><br />
             </div>
         </form>
-        <div><span id='result-span'></span></div>
     </>)
 }
