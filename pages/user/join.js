@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, {useState} from "react"
 
-export default function SignUp(){
+export default function Join(){
 
     const [inputs, setInputs] = useState({})
     
