@@ -14,18 +14,6 @@ export default function Profile(){
       })
     },[])
 
-    /**useEffect(() => {
-        (async () => {
-            console.log(`Next ----> /user/profile/${router.query.id}`);
-            await router.prefetch( `/user/profile/${router.query.id}`, {})
-            .then(res=>{
-                setUser(res.data.user)
-              }).catch(err=>{
-                  
-              })
-        })();
-    }, [router.query.id]);*/
-
     return (<><h1>사용자 프로필</h1>
     <div>
     <label><b>사용자 ID</b></label>
