@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const userSlice = createSlice({
-    name: 'user',
+    name: 'users',
     initialState,
     reducers:{
         joinRequest(state, action){state.userLoading = true, state.error = null},

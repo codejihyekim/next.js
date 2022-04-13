@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {}
+const initialState = []
 export const boardSlice = createSlice({
-    name:'board',
+    name:'boards',
     initialState,
-    reducers:{}
+    reducers:{
+        addBoard: (state, action) => {
+            alert('리듀서에 들어올 Board는? ' +JSON.stringify(action))
+        }
+    }
 })
+export const { addBoard } = boardSlice.actions
+
 export default boardSlice.reducer

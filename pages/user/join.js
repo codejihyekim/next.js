@@ -8,7 +8,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import  Link  from 'next/link';
+import Link from 'next/link';
 import * as yup from 'yup';
 import _ from '../@lodash';
 import Image from 'next/image';
@@ -219,7 +219,7 @@ export default function Register3Page() {
                     )}
                   />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Button style={{'margin-top' : '60px'}}
+                    <Button style={{'marginTop' : '60px'}}
                     variant="contained"
                     color="primary"
                     className="w-full mx-auto mt-16"

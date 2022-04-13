@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {}
 export const basicSlice = createSlice({
-    name: 'basic',
+    name: 'basics',
     initialState,
     reducers:{}
 })
