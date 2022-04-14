@@ -1,6 +1,7 @@
 import { Layout } from "common";
 import Head from "next/head"
-import wrapper from '../redux/store'
+import {wrapper} from '../redux/store.ts'
+import { PropTypes } from "prop-types";
 
 const App = ({Component, pageProps}) => {
   return (<>

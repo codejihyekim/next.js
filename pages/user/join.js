@@ -10,17 +10,18 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import * as yup from 'yup';
-import _ from '../@lodash';
+import * as _ from 'lodash'
 import Image from 'next/image';
 //import './styles/UserLayout.scss'
 //import './styles/UserRegister.scss'
 //import { CheckList } from '..';
-import { joinRequest } from '../../redux/reducers/user.reducer';
+
 
 const schema = yup.object().shape({
   username: yup.string().required('사용자 ID를 입력하시오'),
   name: yup.string().required('사용자 이름을 입력하시오'),
   telephone: yup.string().required('전화번호를 입력하시오'),
+  email: yup.string().required('이메일을 입력하시오'),
   password: yup
     .string()
     .required('비밀번호를 입력하시오')
@@ -30,10 +31,13 @@ const schema = yup.object().shape({
 });
 
 const defaultValues = {
-  username: '',
-  telephone: '',
+  userid: '',
+  phone: '',
   password: '',
-  name: ''
+  name: '',
+  email:'',
+  birth:'',
+  address:''
 };
 
 export default function Register3Page() {
@@ -52,7 +56,7 @@ export default function Register3Page() {
 
   return (
     <>
-      <div className="User-container">
+      <div className="User-container" style={{ width: "60vh" }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -84,10 +88,9 @@ export default function Register3Page() {
                   name="registerForm"
                   noValidate
                   className="flex flex-col justify-center w-full"
-                  onSubmit={handleSubmit(async (data) => { await dispatch(joinRequest({ ...data, })) })}
                 >
                   <Controller
-                    name="username"
+                    name="userid"
                     control={control}
                     render={({ field }) => (
                       <TextField
@@ -95,9 +98,9 @@ export default function Register3Page() {
                         className="mb-16"
                         label="Name"
                         autoFocus
-                        type="username"
-                        error={!!errors.username}
-                        helperText={errors?.username?.message}
+                        type="userid"
+                        error={!!errors.userid}
+                        helperText={errors?.userid?.message}
                         variant="outlined"
                         required
                         fullWidth
@@ -128,6 +131,25 @@ export default function Register3Page() {
                   <button onClick={() => dispatch(
                     exist(document.getElementById('email').value))}>중복체크</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <Controller
+                    name="name"
+                    control={control}
+                    render={({ field }) => (
+                      <TextField
+                        {...field}
+                        className="mb-16"
+                        label="name"
+                        type="text"
+                        error={!!errors.name}
+                        helperText={errors?.name?.message}
+                        variant="outlined"
+                        required
+                        fullWidth
+                      />
+                    )}
+                  />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                   <Controller
                     name="phone"

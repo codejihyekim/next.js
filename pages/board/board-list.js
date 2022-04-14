@@ -14,7 +14,7 @@ const Table = ({columns, colspan, data}) => {
         </thead>
         <tbody>
             {data.length == 0 ? <tr className={style.tr}>
-                    <td colSpan={colspan} className={style.td}>데이터가 없습니다.</td>
+                    <td colSpan={colspan} className={style.td}>게시글 없음</td>
                     </tr>
                 :data.map((board) => (
                     <tr className={style.tr} key={board.passengerId}>

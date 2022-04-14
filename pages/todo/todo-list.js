@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import tableStyles from '../common/style/table.module.css'
 import Link from 'next/link'
-import todoReducer from '../../redux/reducers/todo.reducer';
+import todoReducer from '../../redux/reducers/todoReducer.ts';
 
 const Table = ({columns, colspan , data}) => {
 
