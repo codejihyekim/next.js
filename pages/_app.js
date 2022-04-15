@@ -1,4 +1,4 @@
-import { Layout } from "common";
+import { Layout } from "./common";
 import Head from "next/head"
 import {wrapper} from '../redux/store.ts'
 import { PropTypes } from "prop-types";

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useState} from "react"
+import tableStyles from '../common/styles/table.module.css'
 
 export default function Bmi (){
     const proxy = 'http://localhost:5000'
@@ -27,19 +28,42 @@ export default function Bmi (){
         .catch(err => alert(err))
     }
 
-    return (<div>
+    return (
         <form action="" onSubmit={handleSubmit} >
-            <h1>BMI 폼</h1>
-                <div>
-                    <label><b>name</b></label>
-                    <input name="name" type="text" onChange={handleChange}/><br/>
-                    <label><b>height</b></label>
-                    <input name="height" type="text" onChange={handleChange}/><br/>
-                    <label><b>weight</b></label>
-                    <input name="weight" type="text" onChange={handleChange}/><br/>
-                    <input type="submit" value="BMI 체크" /><br/>
-                </div>
-        </form>
-        <div>결과: <span id='result-span'> </span> </div>
-    </div>)
+           <table className={tableStyles.table}>
+           <thead>
+            <tr>
+                <th colSpan={2}><h2>BMI</h2></th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+                <td>
+                    <label>이름</label>
+                </td>
+                <td>
+                    <input type="text" name="name" onChange={handleChange}/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>키</label>
+                </td>
+                <td>
+                    <input type="text" name="height" onChange={handleChange}/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>몸무게</label>
+                </td>
+                <td>
+                    <input type="text" name="weight" onChange={handleChange}/>
+                </td>
+            </tr>
+            <tr><td colSpan={2}><input type="submit" value="BMI 체크"/></td></tr>
+                <tr><td colSpan={2}>결과: <span id="result-span"></span></td></tr>
+           </tbody> 
+           </table></form>
+           )
 }
