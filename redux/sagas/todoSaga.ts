@@ -23,7 +23,7 @@ function* join(todo: TodoJoinType){
         const response : TodoJoinSuccessType = yield postTodo(todo.payload)
         yield put(todoActions.joinSuccess(response))
     } catch(error){
-        alert('진행 3: sata 내부 join 실패')
+        alert('진행 3: saga 내부 join 실패')
         yield put(todoActions.joinFailure(error))
     }
 }

@@ -13,7 +13,7 @@ export const createStore = () =>{
     const store = configureStore({
         reducer: rootReducer,
         devTools: true,
-        middleware: [sagaMiddleware],
+        middleware: [sagaMiddleware]
     })
     sagaMiddleware.run(rootSaga)
     return store

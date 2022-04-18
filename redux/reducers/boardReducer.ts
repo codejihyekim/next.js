@@ -1,15 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = []
-export const boardSlice = createSlice({
+export interface BoardType{
+
+}
+
+export interface BoardState{
+    loading: boolean;
+    data: BoardType[];
+    error: any;
+}
+const initialState: BoardState = {
+    loading:false,
+    data: [],
+    error: null
+}
+
+const boardSlice = createSlice({
     name:'boards',
     initialState,
     reducers:{
-        addBoard: (state, action) => {
-            alert('리듀서에 들어올 Board는? ' +JSON.stringify(action))
+        joinRequest(state: BoardState, payload){
+            alert('진행2 : 리듀서 내부')
+            state.loading = true;
+        },
+        joinSuccess(state: BoardState, {payload}){
+            state.data = [...state.data, payload]
+            state.loading = false;
+        },
+        joinFailure(state: BoardState, {payload}){
+            state.data = payload;
+            state.loading = false;
         }
+        
     }
 })
-export const { addBoard } = boardSlice.actions
 
-export default boardSlice.reducer
+const {reducer, actions} = boardSlice
+export const boardActions = actions
+export default reducer

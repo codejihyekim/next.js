@@ -1,1 +1,1 @@
-export {default as board} from 'board/board-list'
+export {default as board} from 'board/getBoards'

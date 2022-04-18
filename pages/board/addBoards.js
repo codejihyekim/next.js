@@ -14,9 +14,8 @@ export default function Board(){
    
     return (<form onSubmit={e => {
         e.preventDefault()
-        
-        if(inputs) dispatch(addBoard(inputs))
-    }}><table className={tableStyles.table}>
+        if(inputs) dispatch(addBoard(inputs))}}>
+    <table className={tableStyles.table}>
         <thead>
             <tr>
                 <th colSpan={2}><h2>게시판 글쓰기</h2></th>

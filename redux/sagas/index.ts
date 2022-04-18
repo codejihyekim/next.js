@@ -4,5 +4,4 @@ import { watch } from './todoSaga.ts'
 
 export default function* rootSaga() {
     yield all([watchJoin(), watch()]);
-    
 }
