@@ -22,15 +22,51 @@ const todoSlice = createSlice({
     name:'todos',
     initialState,
     reducers:{
-        joinRequest(state: TodoState, payload){
+        addTodoRequest(state: TodoState, payload){
             alert('진행 2: 리듀서 내부')
             state.loading = true;
         },
-        joinSuccess(state: TodoState, {payload}){
+        addTodoSuccess(state: TodoState, {payload}){
             state.data = [...state.data, payload]
             state.loading = false;
         },
-        joinFailure(state: TodoState, {payload}){
+        addTodoFailure(state: TodoState, {payload}){
+            state.data = payload;
+            state.loading = false;
+        },
+        getTodoRequest(state: TodoState, payload){
+            alert('진행 2: 리듀서 내부')
+            state.loading = true;
+        },
+        getTodoSuccess(state: TodoState, {payload}){
+            state.data = [...state.data, payload]
+            state.loading = false;
+        },
+        getTodoFailure(state: TodoState, {payload}){
+            state.data = payload;
+            state.loading = false;
+        },
+        modifyTodoRequest(state: TodoState, payload){
+            alert('진행 2: 리듀서 내부')
+            state.loading = true;
+        },
+        modifyTodoSuccess(state: TodoState, {payload}){
+            state.data = [...state.data, payload]
+            state.loading = false;
+        },
+        modifyTodoFailure(state: TodoState, {payload}){
+            state.data = payload;
+            state.loading = false;
+        },
+        removeTodoRequest(state: TodoState, payload){
+            alert('진행 2: 리듀서 내부')
+            state.loading = true;
+        },
+        removeTodoSuccess(state: TodoState, {payload}){
+            state.data = [...state.data, payload]
+            state.loading = false;
+        },
+        removeTodoFailure(state: TodoState, {payload}){
             state.data = payload;
             state.loading = false;
         }

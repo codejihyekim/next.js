@@ -41,6 +41,7 @@ const SubMenu = (props) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  
   return <><Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -51,16 +52,18 @@ const SubMenu = (props) => {
         {props.title}
       </Button>
       <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-         {props.urls.map(function(url, i){
-            return <MenuItem onClick={handleClose}><Link href={url} key={i}>{props.subTitles[i]}</Link></MenuItem>
-          })}
-      </Menu></>
+      id="basic-menu"
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      MenuListProps={{
+        'aria-labelledby': 'basic-button',
+      }}
+    >
+       {props.urls.map(function(url, i){
+          return <MenuItem onClick={handleClose}><Link href={url} key={i}>{props.subTitles[i]}</Link></MenuItem>
+        })}
+    </Menu>
+   
+    </>
 }

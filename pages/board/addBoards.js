@@ -61,7 +61,7 @@ export default function Board(){
             <tr >
                 <td colSpan={2}><input type="submit" value="Submit"/></td >
             </tr>
-                </tbody>
-            </table>
-            </form>)
+            </tbody>
+        </table>
+        </form>)
 }

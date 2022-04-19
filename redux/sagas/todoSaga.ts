@@ -1,26 +1,26 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import { todoActions } from '../../redux/reducers/todoReducer.ts'
-import { postTodo } from '../api/todoApi.ts'
+import { addTodoApi } from '../api/todoApi.ts'
 
-interface TodoJoinType{
+interface TodoType{
     type: string;
     payload:{
         userid: string, task: string, completed: string 
     }
 }
 
-interface TodoJoinSuccessType{
+interface TodoSuccessType{
     type: string;
     payload: {
         userid: string 
     }
 }
 
-function* join(todo: TodoJoinType){
+function* addTodo(todo: TodoType){
     try{
         alert('진행 3: saga 내부 join 성공' + JSON.stringify(todo))
-        const response : TodoJoinSuccessType = yield postTodo(todo.payload)
+        const response : TodoSuccessType = yield addTodoApi(todo.payload)
         yield put(todoActions.joinSuccess(response))
     } catch(error){
         alert('진행 3: saga 내부 join 실패')
@@ -29,5 +29,5 @@ function* join(todo: TodoJoinType){
 }
 
 export function* watch(){
-    yield takeLatest(todoActions.joinRequest, join)
+    yield takeLatest(todoActions.joinRequest, addTodo)
 }

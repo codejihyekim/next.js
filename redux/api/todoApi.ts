@@ -11,7 +11,7 @@ export interface TodoType{
     completed: string; //value is T or F
 }
 
-export const postTodo = async(payload: 
+export const addTodoApi = async(payload: 
     {userid: string, task: string, completed: string}) => {
         try{
             const response: AxiosResponse<unknown, TodoType[]> = 

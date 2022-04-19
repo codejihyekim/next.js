@@ -14,7 +14,7 @@ export default function AddTodo() {
   return (
       <form onSubmit={ e => {
           e.preventDefault()
-          dispatch(todoActions.joinRequest(todo))
+          dispatch(todoActions.addTodoRequest(todo))
           setTodo({
             userid: '', task: '', completed: ''
           })
