@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 export default function Nav(){
   const basicUrls = ["/basic/counter","/basic/calc","/basic/bmi"]
   const basicSubTitle = ["카운터","계산기","BMI"]
-  const userUrls = ["/user/join","/user/login","/user/logout","/user/profile","/user/modifyUser","/user/withdrawUser","user/getUsers"]
+  const userUrls = ["/user/join","/user/login","/user/logout","/user/profile","/user/modifyUser","/user/withdrawUser","/user/getUsers"]
   const userSubTitle = ["회원가입","로그인","로그아웃","프로필","회원수정","회원탈퇴","회원목록"]
   const todoUrls = ["/todo/addTodos","/todo/getTodos","/todo/modifyTodos","/todo/removeTodos"]
   const todoSubTitle = ["할일등록","할일목록","할일수정","할일삭제"]

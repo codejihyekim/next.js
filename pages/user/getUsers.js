@@ -28,7 +28,7 @@ export default function UserList(){
                   ))}
                 </tr>
                 { data.length == 0  ?<tr >
-                                      <td colSpan={6} >데이터가 없습니다</td>
+                                      <td colSpan={7} >데이터가 없습니다</td>
                                       </tr>
                 :data.map((user) => (
                 <tr key={user.userid} >
