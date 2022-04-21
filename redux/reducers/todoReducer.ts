@@ -23,7 +23,7 @@ const todoSlice = createSlice({
     initialState,
     reducers:{
         addTodoRequest(state: TodoState, payload){
-            alert('진행 2: 리듀서 내부')
+            alert('진행 2: 일정추가 리듀서 내부')
             state.loading = true;
         },
         addTodoSuccess(state: TodoState, {payload}){
@@ -35,7 +35,7 @@ const todoSlice = createSlice({
             state.loading = false;
         },
         getTodoRequest(state: TodoState, payload){
-            alert('진행 2: 리듀서 내부')
+            alert('진행 2: 일정목록 리듀서 내부')
             state.loading = true;
         },
         getTodoSuccess(state: TodoState, {payload}){
@@ -47,7 +47,7 @@ const todoSlice = createSlice({
             state.loading = false;
         },
         modifyTodoRequest(state: TodoState, payload){
-            alert('진행 2: 리듀서 내부')
+            alert('진행 2: 일정수정 리듀서 내부')
             state.loading = true;
         },
         modifyTodoSuccess(state: TodoState, {payload}){
@@ -59,7 +59,7 @@ const todoSlice = createSlice({
             state.loading = false;
         },
         removeTodoRequest(state: TodoState, payload){
-            alert('진행 2: 리듀서 내부')
+            alert('진행 2: 일정삭제 리듀서 내부')
             state.loading = true;
         },
         removeTodoSuccess(state: TodoState, {payload}){
